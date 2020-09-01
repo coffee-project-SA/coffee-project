@@ -8,34 +8,39 @@
 <body>
 
     <div class="container">
-        <h1 id="coffeeTitle">Coffee!</h1>
-        <hr>
+        <header>
+            <h1 id="coffeeTitle">Coffee!</h1>
+            <hr>
+        </header>
 
 
         <section>
             <div id="coffees"></div>
-        </section>
 
-        <section>
+
             <!-- Select Coffee Roast and Text Input -->
             <form class="card">
+                <p>
                 <label for="roast-selection-1"></label>
+                </p>
                 <select id="roast-selection-1" onchange="changeRoast()">
+                    <options selected>all</options>
                     <option>light</option>
                     <option>medium</option>
                     <option>dark</option>
                 </select>
+
                 <p><label for="name-input">Coffee Name</label></p>
 <!--                <input type="text" name="coffeeName">-->
                 <input id="name-input" type="text" name="name-input" oninput="autofillCoffee()">
             </form>
 
-            <br>
-            <hr>
-
             <!-- Add a Coffee -->
-            <h1>Add a Coffee</h1>
             <form class="card">
+                <br>
+                <hr>
+
+                <h1> Add a Coffee</h1>
                 <label for="roast-selection-2"></label>
                 <select id="roast-selection-2">
                     <option>light</option>
