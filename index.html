@@ -20,14 +20,14 @@
             <!-- Select Coffee Roast and Text Input -->
             <form class="card">
                 <label for="roast-selection-1"></label>
-                <select id="roast-selection-1">
+                <select id="roast-selection-1" onchange="changeRoast()">
                     <option>light</option>
                     <option>medium</option>
                     <option>dark</option>
                 </select>
-                <p><label>Coffee Name</label></p>
-                <input type="text" name="coffeeName">
-                <input id="submit-1" type="submit" />
+                <p><label for="name-input">Coffee Name</label></p>
+<!--                <input type="text" name="coffeeName">-->
+                <input id="name-input" type="text" name="name-input" oninput="autofillCoffee()">
             </form>
 
             <br>
@@ -47,7 +47,12 @@
                 <input id="submit-2" type="submit" />
             </form>
         </section>
+
+        <main>
+            <div id="coffees"></div>
+        </main>
     </div>
+
 
     <script src="main.js"></script>
 </body>

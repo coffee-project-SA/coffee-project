@@ -1,11 +1,10 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    var html = '<tr class="coffee">';
-    html += '<td>' + coffee.id + '</td>';
-    html += '<td>' + coffee.name + '</td>';
-    html += '<td>' + coffee.roast + '</td>';
-    html += '</tr>';
+    var html = '<div class="coffee">';
+    html += '<h2 class="c-name">' + coffee.name + '</h2>';
+    html += '<p class="c-roast">' + coffee.roast + '</p>';
+    html += '</div>';
 
     return html;
 }
@@ -18,16 +17,22 @@ function renderCoffees(coffees) {
     return html;
 }
 
-function updateCoffees(e) {
-    e.preventDefault(); // don't submit the form, we just want to update the data
+// by taking off e it allows us to use select menu and the input
+function updateCoffees() {
+    // e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
+    var selectedName = nameInput.value;
     var filteredCoffees = [];
     coffees.forEach(function(coffee) {
-        if (coffee.roast === selectedRoast) {
-            filteredCoffees.push(coffee);
+        if (coffee.roast === selectedRoast || "all" === selectedRoast) {
+            if (coffee.name.toLowerCase().includes(selectedName.toLowerCase())) {
+                filteredCoffees.push(coffee);
+         } else if ("" === selectedName) {
+             filteredCoffees.push(coffee);
+             }
         }
     });
-    tbody.innerHTML = renderCoffees(filteredCoffees);
+    divCoffee.innerHTML = renderCoffees(filteredCoffees);
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
@@ -48,10 +53,21 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
-var tbody = document.querySelector('#coffees');
+var divCoffee = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
-var roastSelection = document.querySelector('#roast-selection');
+var roastSelection = document.querySelector('#roast-selection-1');
+var nameInput = document.querySelector('#name-input')
 
-tbody.innerHTML = renderCoffees(coffees);
+divCoffee.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
+
+function autofillCoffee() {
+    nameInput = document.querySelector('#name-input');
+    updateCoffees();
+}
+
+function changeRoast() {
+    roastSelection = document.querySelector('#roast-selection-1');
+    updateCoffees();
+}
