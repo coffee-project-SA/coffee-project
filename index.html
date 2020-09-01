@@ -24,15 +24,15 @@
                 <label for="roast-selection-1"></label>
                 </p>
                 <select id="roast-selection-1" onchange="changeRoast()">
-                    <options selected>all</options>
+                    <option selected>all</option>
                     <option>light</option>
                     <option>medium</option>
                     <option>dark</option>
                 </select>
 
                 <p><label for="name-input">Coffee Name</label></p>
-<!--                <input type="text" name="coffeeName">-->
                 <input id="name-input" type="text" name="name-input" oninput="autofillCoffee()">
+                <input id="submit-1" type="submit" />
             </form>
 
             <!-- Add a Coffee -->
@@ -48,14 +48,11 @@
                     <option>dark</option>
                 </select>
                 <p><label>Name</label></p>
-                <input type="text" name="coffeeName">
+                <input id="name-input-2" type="text" name="coffeeName">
                 <input id="submit-2" type="submit" />
             </form>
         </section>
 
-        <main>
-            <div id="coffees"></div>
-        </main>
     </div>
 
 

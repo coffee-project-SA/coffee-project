@@ -54,9 +54,13 @@ var coffees = [
 ];
 
 var divCoffee = document.querySelector('#coffees');
-var submitButton = document.querySelector('#submit');
+var submitButton = document.querySelector('#submit-1');
+var submitButton2 = document.querySelector('#submit-2');
 var roastSelection = document.querySelector('#roast-selection-1');
 var nameInput = document.querySelector('#name-input')
+var nameInput2 = document.querySelector("#name-input-2")
+var roastSelection2 = document.querySelector('#roast-selection-2');
+
 
 divCoffee.innerHTML = renderCoffees(coffees);
 
@@ -70,4 +74,24 @@ function autofillCoffee() {
 function changeRoast() {
     roastSelection = document.querySelector('#roast-selection-1');
     updateCoffees();
+}
+
+
+
+submitButton2.addEventListener('click', updateUserCoffee);
+
+
+function updateUserCoffee (event) {
+    event.preventDefault();
+    var newCoffee = {
+        id: coffees.length + 1,
+        name: nameInput2.value,
+        roast: roastSelection2.value
+    }
+
+    coffees.push(newCoffee);
+    console.log(coffees);
+    divCoffee.innerHTML = renderCoffees(coffees);
+
+
 }
