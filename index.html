@@ -6,28 +6,48 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Coffee!</h1>
 
-    <form>
-        <label for="roast-selection"></label>
-        <select id="roast-selection">
-            <option>light</option>
-            <option>medium</option>
-            <option>dark</option>
-        </select>
-        <input id="submit" type="submit" />
-    </form>
+    <div class="container">
+        <h1 id="coffeeTitle">Coffee!</h1>
+        <hr>
 
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>NAME</th>
-                <th>ROAST</th>
-            </tr>
-        </thead>
-        <tbody id="coffees"></tbody>
-    </table>
+
+        <section>
+            <div id="coffees"></div>
+        </section>
+
+        <section>
+            <!-- Select Coffee Roast and Text Input -->
+            <form class="card">
+                <label for="roast-selection-1"></label>
+                <select id="roast-selection-1">
+                    <option>light</option>
+                    <option>medium</option>
+                    <option>dark</option>
+                </select>
+                <p><label>Coffee Name</label></p>
+                <input type="text" name="coffeeName">
+                <input id="submit-1" type="submit" />
+            </form>
+
+            <br>
+            <hr>
+
+            <!-- Add a Coffee -->
+            <h1>Add a Coffee</h1>
+            <form class="card">
+                <label for="roast-selection-2"></label>
+                <select id="roast-selection-2">
+                    <option>light</option>
+                    <option>medium</option>
+                    <option>dark</option>
+                </select>
+                <p><label>Name</label></p>
+                <input type="text" name="coffeeName">
+                <input id="submit-2" type="submit" />
+            </form>
+        </section>
+    </div>
 
     <script src="main.js"></script>
 </body>

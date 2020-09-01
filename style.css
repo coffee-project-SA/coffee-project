@@ -1,9 +1,10 @@
-table {
-    border-collapse: collapse;
-    margin: 15px 0;
+* {
+    box-sizing: border-box;
 }
 
-td, th {
-    border: 1px solid black;
-    padding: 5px 10px;
+#coffeeTitle {
+    text-align: center;
 }
+
+
+
