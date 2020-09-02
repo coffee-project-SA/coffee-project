@@ -2,8 +2,8 @@
 
 function renderCoffee(coffee) {
     var html = '<div class="coffee">';
-    html += '<div class="col s6 roast-out"><h4 class="coffee-name text">' + coffee.name;
-    html += ' <small class="coffee-roast">' + coffee.roast + '</small></h4></div>';
+    html += '<div class="col s6 roast-out"><h3 class="coffee-name text">' + coffee.name;
+    html += ' <small class="coffee-roast">' + coffee.roast + '</small></h3></div>';
     return html;
 }
 
