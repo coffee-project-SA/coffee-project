@@ -10,8 +10,9 @@
 
     <div class="container">
         <header>
-            <h1 id="coffeeTitle">Coffee!</h1>
-            <hr>
+            <div class="jumbotron">
+                <h1 id="coffeeTitle" class="display-4">Coffee!</h1>
+            </div>
         </header>
 
 
@@ -28,9 +29,9 @@
 
 
                     <!-- Select Coffee Roast and Text Input -->
-                    <div class="col-4">
-                        <form class="card">
-                                <h1>Select Coffee</h1>
+                    <div class="col-4 text-black selectCoffee">
+                        <form class="card special-card">
+                                <h1 class="card-header text-center">Select Coffee</h1>
                                 <h5>Select Roast</h5>
                                 <select id="roast-selection-1" onchange="changeRoast()">
                                     <option selected>all</option>
@@ -47,8 +48,8 @@
 
                         <br>
                         <!-- Add a Coffee -->
-                        <form class="card">
-                            <h1> Add a Coffee</h1>
+                        <form class="card special-card">
+                            <h1 class="card-header text-center"> Add a Coffee</h1>
                             <h5>Select Roast</h5>
                             <select id="roast-selection-2">
                                 <option>light</option>

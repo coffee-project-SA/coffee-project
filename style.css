@@ -9,6 +9,17 @@ body {
     text-align: center;
 }
 
+.coffee {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.selectCoffee {
+    background-color: transparent;
+}
+
+.special-card{
+    background-color: rgba(255, 255, 255, 0.5);
+}
 
 
 
