@@ -16,46 +16,57 @@
 
 
         <section>
-            <div id="coffees"></div>
+
+            <div class="container-fluid">
+                <div class="row">
 
 
-            <!-- Select Coffee Roast and Text Input -->
-            <form class="card">
-                <p>
-                <label for="roast-selection-1"></label>
-                </p>
-                <select id="roast-selection-1" onchange="changeRoast()">
-                    <option selected>all</option>
-                    <option>light</option>
-                    <option>medium</option>
-                    <option>dark</option>
-                </select>
 
-                <p><label for="name-input">Coffee Name</label></p>
-                <input id="name-input" type="text" name="name-input" oninput="autofillCoffee()">
-                <input id="submit-1" type="submit" />
-            </form>
 
-            <!-- Add a Coffee -->
-            <form class="card">
-                <br>
-                <hr>
+                    <!-- Coffee List -->
+                    <div class="col" id="coffees"></div>
 
-                <h1> Add a Coffee</h1>
-                <label for="roast-selection-2"></label>
-                <select id="roast-selection-2">
-                    <option>light</option>
-                    <option>medium</option>
-                    <option>dark</option>
-                </select>
-                <p><label>Name</label></p>
-                <input id="name-input-2" type="text" name="coffeeName">
-                <input id="submit-2" type="submit" />
-            </form>
+
+                    <!-- Select Coffee Roast and Text Input -->
+                    <div class="col-4">
+                        <form class="card">
+                                <h1>Select Coffee</h1>
+                                <h5>Select Roast</h5>
+                                <select id="roast-selection-1" onchange="changeRoast()">
+                                    <option selected>all</option>
+                                    <option>light</option>
+                                    <option>medium</option>
+                                    <option>dark</option>
+                                </select>
+                                <br>
+                                <h5>Coffee Name</h5>
+                                <input id="name-input" type="text" name="name-input" oninput="autofillCoffee()">
+                                <br>
+                                <input id="submit-1" type="submit" />
+                        </form>
+
+                        <br>
+                        <!-- Add a Coffee -->
+                        <form class="card">
+                            <h1> Add a Coffee</h1>
+                            <h5>Select Roast</h5>
+                            <select id="roast-selection-2">
+                                <option>light</option>
+                                <option>medium</option>
+                                <option>dark</option>
+                            </select>
+                            <br>
+                            <h5>Coffee Name</h5>
+                            <input id="name-input-2" type="text" name="coffeeName">
+                            <br>
+                            <input id="submit-2" type="submit" />
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
         </section>
-
-    </div>
-
     <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
