@@ -22,35 +22,43 @@ function updateCoffees() {
     var selectedRoast = roastSelection.value;
     var selectedName = nameInput.value;
     var filteredCoffees = [];
-    coffees.forEach(function(coffee) {
+    JSON.parse(window.localStorage.getItem('customCoffees'));
+    coffees.forEach(function (coffee) {
         if (coffee.roast === selectedRoast || "all" === selectedRoast) {
             if (coffee.name.toLowerCase().includes(selectedName.toLowerCase())) {
                 filteredCoffees.push(coffee);
-         } else if ("" === selectedName) {
-             filteredCoffees.push(coffee);
-             }
+            } else if ("" === selectedName) {
+                filteredCoffees.push(coffee);
+            }
         }
     });
+
     divCoffee.innerHTML = renderCoffees(filteredCoffees);
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
-var coffees = [
-    {id: 1, name: 'Light City', roast: 'light'},
-    {id: 2, name: 'Half City', roast: 'light'},
-    {id: 3, name: 'Cinnamon', roast: 'light'},
-    {id: 4, name: 'City', roast: 'medium'},
-    {id: 5, name: 'American', roast: 'medium'},
-    {id: 6, name: 'Breakfast', roast: 'medium'},
-    {id: 7, name: 'High', roast: 'dark'},
-    {id: 8, name: 'Continental', roast: 'dark'},
-    {id: 9, name: 'New Orleans', roast: 'dark'},
-    {id: 10, name: 'European', roast: 'dark'},
-    {id: 11, name: 'Espresso', roast: 'dark'},
-    {id: 12, name: 'Viennese', roast: 'dark'},
-    {id: 13, name: 'Italian', roast: 'dark'},
-    {id: 14, name: 'French', roast: 'dark'},
-];
+if (localStorage.getItem('customCoffees')=== null) {
+    var coffees = [
+        {id: 1, name: 'Light City', roast: 'light'},
+        {id: 2, name: 'Half City', roast: 'light'},
+        {id: 3, name: 'Cinnamon', roast: 'light'},
+        {id: 4, name: 'City', roast: 'medium'},
+        {id: 5, name: 'American', roast: 'medium'},
+        {id: 6, name: 'Breakfast', roast: 'medium'},
+        {id: 7, name: 'High', roast: 'dark'},
+        {id: 8, name: 'Continental', roast: 'dark'},
+        {id: 9, name: 'New Orleans', roast: 'dark'},
+        {id: 10, name: 'European', roast: 'dark'},
+        {id: 11, name: 'Espresso', roast: 'dark'},
+        {id: 12, name: 'Viennese', roast: 'dark'},
+        {id: 13, name: 'Italian', roast: 'dark'},
+        {id: 14, name: 'French', roast: 'dark'},
+    ];
+    coffees.reverse();
+} else {
+    var coffees = JSON.parse(window.localStorage.getItem('customCoffees'));
+    coffees.reverse();
+}
 
 var divCoffee = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit-1');
@@ -90,7 +98,15 @@ function updateUserCoffee (event) {
 
     coffees.push(newCoffee);
     console.log(coffees);
+    localStorage.setItem('customCoffees', JSON.stringify(coffees));
     divCoffee.innerHTML = renderCoffees(coffees);
+}
 
-
+function resetLocal () {
+    var asure = confirm("are you sure you want to reset the list of coffees?");
+    if (asure) {
+        localStorage.removeItem('customCoffees');
+        coffees = Array.from(coffees);
+        updateCoffees();
+    }
 }
