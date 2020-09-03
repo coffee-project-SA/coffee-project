@@ -1,21 +1,21 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    var html = '<div class="coffee card" style="width: 300px;">';
+    var html = '<div class="coffee card" style="width: 250px;">';
     if (coffee.roast === 'light') {
-        html += '<img class="coffee-image card-img-top" width="300px" height="300px" src="img_video/light-roast.png">'
-        html += '<div class="col s6 roast-out card-body"><h3 class="coffee-name text">' + coffee.name;
-        html += '<small class="coffee-roast">' + coffee.roast + '</small></h3>' + '</div>';
+        html += '<img class="coffee-image card-img-top" width="300px" height="250px" src="img_video/light-roast.png">'
+        html += '<div class="col s6 roast-out card-body"><h3 class="coffee-name text">' + coffee.name + '</h3>'
+        html += '<p style="font-size: 12px" class="coffee-roast">Light brown in color, this roast is generally preferred for milder coffee varieties. There will be no oil on the surface of these beans because they are not roasted long enough for the oils to break through to the surface.</p>'
     } else if (coffee.roast === 'medium') {
-        html += '<img class="coffee-image card-img-top" width="300px" height="300px" src="img_video/med-roast.png">'
-        html += '<div class="col s6 roast-out"><h3 class="coffee-name text">' + coffee.name;
-        html += '<small class="coffee-roast">' + coffee.roast + '</small></h3>' + '</div>';
+        html += '<img class="coffee-image card-img-top" width="300px" height="250px" src="img_video/med-roast.png">'
+        html += '<div class="col s6 roast-out card-body"><h3 class="coffee-name text">' + coffee.name + '</h3>'
+        html += '<p style="font-size: 12px" class="coffee-roast">This roast is medium brown in color with a stronger flavor and a non-oily surface. It’s often referred to as the American roast because it is generally preferred in the United States.</p>';
     } else if (coffee.roast === 'dark') {
-        html += '<img class="coffee-image card-img-top" width="300px" height="300px" src="img_video/dark-roast.png">'
-        html += '<div class="col s6 roast-out"><h3 class="coffee-name text">' + coffee.name;
-        html += '<small class="coffee-roast">' + coffee.roast + '</small></h3>' + '</div>';
+        html += '<img class="coffee-image card-img-top" width="300px" height="250px" src="img_video/dark-roast.png">'
+        html += '<div class="col s6 roast-out card-body"><h3 class="coffee-name text">' + coffee.name + '</h3>'
+        html += '<p style="font-size: 12px" class="coffee-roast">This roast produces shiny black beans with an oily surface and a pronounced bitterness. The darker the roast, the less acidity will be found in the coffee beverage.  Dark roast coffees run from slightly dark to charred, and the names are often used interchangeably — be sure to check your beans before you buy them!</p>';
     }
-
+    html += '<a href="#" class="btn btn-primary float-right">Purchase</a>'  + '</div>';
     html += '</div>';
     return html;
 }
