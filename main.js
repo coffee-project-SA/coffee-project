@@ -2,15 +2,15 @@
 
 function renderCoffee(coffee) {
     var html = '<div class="coffee card" style="width: 250px;">';
-    if (coffee.roast === 'light') {
+    if (coffee.roast === 'Light') {
         html += '<img class="coffee-image card-img-top" width="300px" height="250px" src="img_video/light-roast.png">'
         html += '<div class="col s6 roast-out card-body"><h3 class="coffee-name text">' + coffee.name + '</h3>'
         html += '<p style="font-size: 12px" class="coffee-roast">Light brown in color, this roast is generally preferred for milder coffee varieties. There will be no oil on the surface of these beans because they are not roasted long enough for the oils to break through to the surface.</p>'
-    } else if (coffee.roast === 'medium') {
+    } else if (coffee.roast === 'Medium') {
         html += '<img class="coffee-image card-img-top" width="300px" height="250px" src="img_video/med-roast.png">'
         html += '<div class="col s6 roast-out card-body"><h3 class="coffee-name text">' + coffee.name + '</h3>'
         html += '<p style="font-size: 12px" class="coffee-roast">This roast is medium brown in color with a stronger flavor and a non-oily surface. It’s often referred to as the American roast because it is generally preferred in the United States.</p>';
-    } else if (coffee.roast === 'dark') {
+    } else if (coffee.roast === 'Dark') {
         html += '<img class="coffee-image card-img-top" width="300px" height="250px" src="img_video/dark-roast.png">'
         html += '<div class="col s6 roast-out card-body"><h3 class="coffee-name text">' + coffee.name + '</h3>'
         html += '<p style="font-size: 12px" class="coffee-roast">This roast produces shiny black beans with an oily surface and a pronounced bitterness. The darker the roast, the less acidity will be found in the coffee beverage.  Dark roast coffees run from slightly dark to charred, and the names are often used interchangeably — be sure to check your beans before you buy them!</p>';
@@ -36,7 +36,7 @@ function updateCoffees() {
     var filteredCoffees = [];
     JSON.parse(window.localStorage.getItem('customCoffees'));
     coffees.forEach(function (coffee) {
-        if (coffee.roast === selectedRoast || "all" === selectedRoast) {
+        if (coffee.roast === selectedRoast || "All" === selectedRoast) {
             if (coffee.name.toLowerCase().includes(selectedName.toLowerCase())) {
                 filteredCoffees.push(coffee);
             } else if ("" === selectedName) {
@@ -51,20 +51,20 @@ function updateCoffees() {
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 if (localStorage.getItem('customCoffees')=== null) {
     var coffees = [
-        {id: 1, name: 'Light City', roast: 'light'},
-        {id: 2, name: 'Half City', roast: 'light'},
-        {id: 3, name: 'Cinnamon', roast: 'light'},
-        {id: 4, name: 'City', roast: 'medium'},
-        {id: 5, name: 'American', roast: 'medium'},
-        {id: 6, name: 'Breakfast', roast: 'medium'},
-        {id: 7, name: 'High', roast: 'dark'},
-        {id: 8, name: 'Continental', roast: 'dark'},
-        {id: 9, name: 'New Orleans', roast: 'dark'},
-        {id: 10, name: 'European', roast: 'dark'},
-        {id: 11, name: 'Espresso', roast: 'dark'},
-        {id: 12, name: 'Viennese', roast: 'dark'},
-        {id: 13, name: 'Italian', roast: 'dark'},
-        {id: 14, name: 'French', roast: 'dark'},
+        {id: 1, name: 'Light City', roast: 'Light'},
+        {id: 2, name: 'Half City', roast: 'Light'},
+        {id: 3, name: 'Cinnamon', roast: 'Light'},
+        {id: 4, name: 'City', roast: 'Medium'},
+        {id: 5, name: 'American', roast: 'Medium'},
+        {id: 6, name: 'Breakfast', roast: 'Medium'},
+        {id: 7, name: 'High', roast: 'Dark'},
+        {id: 8, name: 'Continental', roast: 'Dark'},
+        {id: 9, name: 'New Orleans', roast: 'Dark'},
+        {id: 10, name: 'European', roast: 'Dark'},
+        {id: 11, name: 'Espresso', roast: 'Dark'},
+        {id: 12, name: 'Viennese', roast: 'Dark'},
+        {id: 13, name: 'Italian', roast: 'Dark'},
+        {id: 14, name: 'French', roast: 'Dark'},
     ];
     coffees.reverse();
 } else {
@@ -126,3 +126,22 @@ function resetLocal () {
 
 var deleteCustomCoffee = document.getElementById("delete-btn");
 deleteCustomCoffee.addEventListener('click', resetLocal);
+
+mapboxgl.accessToken = mapboxToken;
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v9',
+    center: [-96.805670, 32.778740],
+    zoom: 15,
+});
+
+var marker = new mapboxgl.Marker()
+    .setLngLat([-96.805670, 32.778740])
+    .addTo(map);
+
+var popup = new mapboxgl.Popup()
+    .setHTML("<h1>Coder Coffee Co.</h1>")
+    .addTo(map);
+
+marker.setPopup(popup);
+marker.togglePopup(popup);
