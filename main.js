@@ -103,10 +103,14 @@ function updateUserCoffee (event) {
 }
 
 function resetLocal () {
-    var asure = confirm("are you sure you want to reset the list of coffees?");
+    var asure = confirm("Are you sure you want to reset the list of coffees?");
     if (asure) {
         localStorage.removeItem('customCoffees');
         coffees = Array.from(coffees);
+        window.location.reload();
         updateCoffees();
     }
 }
+
+var deleteCustomCoffee = document.getElementById("delete-btn");
+deleteCustomCoffee.addEventListener('click', resetLocal);
