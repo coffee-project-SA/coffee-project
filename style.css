@@ -8,21 +8,20 @@ body {
     margin-right: 100px;
 }
 
-.navbar-brand {
-    font-size: 2em;
-}
-
 #coffees {
-    /*margin-left: 20px;*/
-    /*margin-top: 20px;*/
     display: flex;
     flex-wrap: wrap;
 
 }
 
+.navbar-brand {
+    font-size: 2em;
+}
+
 .text-info {
     color: #788892;
 }
+
 
 
 

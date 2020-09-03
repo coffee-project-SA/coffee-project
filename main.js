@@ -1,18 +1,18 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    var html = '<div class="coffee card m-3" style="width: 250px; box-shadow: 10px 10px grey;">';
+    var html = '<div class="coffee card m-3" style="width: 200px; box-shadow: 10px 10px grey;">';
     if (coffee.roast === 'Light') {
-        html += '<img class="coffee-image card-img-top" width="300px" height="250px" src="img_video/light-roast.png">'
-        html += '<div class="col s6 roast-out card-body"><h3 class="coffee-name text">' + coffee.name + '</h3>'
+        html += '<img class="coffee-image card-img-top" width="200px" height="200px" src="img_video/light-roast.png">'
+        html += '<div class="col s6 roast-out card-body"><h4 class="coffee-name text">' + coffee.name + '</h4>'
         html += '<p style="font-size: 12px" class="coffee-roast">Light brown in color, this roast is generally preferred for milder coffee varieties. There will be no oil on the surface of these beans because they are not roasted long enough for the oils to break through to the surface.</p>'
     } else if (coffee.roast === 'Medium') {
-        html += '<img class="coffee-image card-img-top" width="300px" height="250px" src="img_video/med-roast.png">'
-        html += '<div class="col s6 roast-out card-body"><h3 class="coffee-name text">' + coffee.name + '</h3>'
+        html += '<img class="coffee-image card-img-top" width="200px" height="200px" src="img_video/med-roast.png">'
+        html += '<div class="col s6 roast-out card-body"><h4 class="coffee-name text">' + coffee.name + '</h4>'
         html += '<p style="font-size: 12px" class="coffee-roast">This roast is medium brown in color with a stronger flavor and a non-oily surface. It’s often referred to as the American roast because it is generally preferred in the United States.</p>';
     } else if (coffee.roast === 'Dark') {
-        html += '<img class="coffee-image card-img-top" width="300px" height="250px" src="img_video/dark-roast.png">'
-        html += '<div class="col s6 roast-out card-body"><h3 class="coffee-name text">' + coffee.name + '</h3>'
+        html += '<img class="coffee-image card-img-top" width="200px" height="200px" src="img_video/dark-roast.png">'
+        html += '<div class="col s6 roast-out card-body"><h4 class="coffee-name text">' + coffee.name + '</h4>'
         html += '<p style="font-size: 12px" class="coffee-roast">This roast produces shiny black beans with an oily surface and a pronounced bitterness. The darker the roast, the less acidity will be found in the coffee beverage.  Dark roast coffees run from slightly dark to charred, and the names are often used interchangeably — be sure to check your beans before you buy them!</p>';
     }
     html += '<a href="#" class="btn btn-dark float-right">Purchase</a>'  + '</div>';
@@ -132,7 +132,7 @@ var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/dark-v10',
     center: [-96.805670, 32.778740],
-    zoom: 15,
+    zoom: 14,
     interactive: false,
 });
 
@@ -141,7 +141,7 @@ var marker = new mapboxgl.Marker()
     .addTo(map);
 
 var popup = new mapboxgl.Popup()
-    .setHTML("<h1>Coder Coffee Co.</h1>")
+    .setHTML("<h4>Coder Coffee Co.</h4>")
     .addTo(map);
 
 marker.setPopup(popup);
