@@ -1,9 +1,21 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    var html = '<div class="coffee">';
-    html += '<div class="col s6 roast-out"><h3 class="coffee-name text">' + coffee.name;
-    html += ' <small class="coffee-roast">' + coffee.roast + '</small></h3>' + '</div>';
+    var html = '<div class="coffee card" style="width: 300px;">';
+    if (coffee.roast === 'light') {
+        html += '<img class="coffee-image card-img-top" width="300px" height="300px" src="img_video/light-roast.png">'
+        html += '<div class="col s6 roast-out card-body"><h3 class="coffee-name text">' + coffee.name;
+        html += '<small class="coffee-roast">' + coffee.roast + '</small></h3>' + '</div>';
+    } else if (coffee.roast === 'medium') {
+        html += '<img class="coffee-image card-img-top" width="300px" height="300px" src="img_video/med-roast.png">'
+        html += '<div class="col s6 roast-out"><h3 class="coffee-name text">' + coffee.name;
+        html += '<small class="coffee-roast">' + coffee.roast + '</small></h3>' + '</div>';
+    } else if (coffee.roast === 'dark') {
+        html += '<img class="coffee-image card-img-top" width="300px" height="300px" src="img_video/dark-roast.png">'
+        html += '<div class="col s6 roast-out"><h3 class="coffee-name text">' + coffee.name;
+        html += '<small class="coffee-roast">' + coffee.roast + '</small></h3>' + '</div>';
+    }
+
     html += '</div>';
     return html;
 }
