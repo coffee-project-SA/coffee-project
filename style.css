@@ -7,8 +7,9 @@ body {
     margin-left: 100px;
     margin-right: 100px;
 }
-#coffeeTitle {
-    text-align: center;
+
+.navbar-brand {
+    font-size: 2em;
 }
 
 #coffees {
@@ -17,6 +18,10 @@ body {
     display: flex;
     flex-wrap: wrap;
 
+}
+
+.text-info {
+    color: #788892;
 }
 
 

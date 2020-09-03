@@ -1,7 +1,7 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    var html = '<div class="coffee card" style="width: 250px;">';
+    var html = '<div class="coffee card m-3" style="width: 250px; box-shadow: 10px 10px grey;">';
     if (coffee.roast === 'Light') {
         html += '<img class="coffee-image card-img-top" width="300px" height="250px" src="img_video/light-roast.png">'
         html += '<div class="col s6 roast-out card-body"><h3 class="coffee-name text">' + coffee.name + '</h3>'
@@ -15,7 +15,7 @@ function renderCoffee(coffee) {
         html += '<div class="col s6 roast-out card-body"><h3 class="coffee-name text">' + coffee.name + '</h3>'
         html += '<p style="font-size: 12px" class="coffee-roast">This roast produces shiny black beans with an oily surface and a pronounced bitterness. The darker the roast, the less acidity will be found in the coffee beverage.  Dark roast coffees run from slightly dark to charred, and the names are often used interchangeably — be sure to check your beans before you buy them!</p>';
     }
-    html += '<a href="#" class="btn btn-primary float-right">Purchase</a>'  + '</div>';
+    html += '<a href="#" class="btn btn-dark float-right">Purchase</a>'  + '</div>';
     html += '</div>';
     return html;
 }
@@ -130,9 +130,10 @@ deleteCustomCoffee.addEventListener('click', resetLocal);
 mapboxgl.accessToken = mapboxToken;
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v9',
+    style: 'mapbox://styles/mapbox/dark-v10',
     center: [-96.805670, 32.778740],
     zoom: 15,
+    interactive: false,
 });
 
 var marker = new mapboxgl.Marker()
