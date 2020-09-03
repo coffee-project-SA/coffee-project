@@ -2,8 +2,8 @@
     box-sizing: border-box;
 }
 body {
-    background-image: url("img_video/pexels-lukas-942769.jpg");
-    background-size: cover;
+    background-image: url("img_video/ep_naturalwhite.png");
+    background-repeat: repeat;
 }
 #coffeeTitle {
     text-align: center;
