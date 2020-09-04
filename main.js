@@ -1,7 +1,7 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    var html = '<div class="coffee card m-3" style="width: 200px; box-shadow: 10px 10px grey;">';
+    var html = '<div class="coffee card m-3" style="width: 200px; height: 560px; box-shadow: 10px 10px grey;">';
     if (coffee.roast === 'Light') {
         html += '<img class="coffee-image card-img-top" width="200px" height="200px" src="img_video/light-roast.png">'
         html += '<div class="col s6 roast-out card-body"><h4 class="coffee-name text">' + coffee.name + '</h4>'
